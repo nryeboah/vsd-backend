@@ -4,6 +4,7 @@ import dotenv from "dotenv";
 import pool from "./db.js";
 import sopRoutes from "./routes/sops.js";
 import officerRoutes from "./routes/officers.js";
+import authRoutes from "./routes/auth.js";
 
 
 dotenv.config();
@@ -17,6 +18,8 @@ app.use(express.json());
 
 app.use("/api/officers", officerRoutes);
 app.use("/api/sops", sopRoutes);
+app.use("/api/auth", authRoutes);
+
 
 
 // Health check
